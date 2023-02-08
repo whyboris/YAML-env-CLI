@@ -22,6 +22,6 @@ if (yamlFileName) {
   process.stdout.write(export_string);
 
 } else {
-  console.log("ERROR: CLI requires a YAML input file");
+  console.log("ERROR: CLI requires a YAML input file, e.g. `yec sample.yaml`");
   process.exit(1);
 }

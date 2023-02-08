@@ -4,11 +4,13 @@ A **CLI** that does only one thing: outputs the contents of a `YAML` file (`.yml
 
 ## Install
 
-`npm i -g yec`
+```sh
+npm install -g yaml-env-cli
+```
 
 ## How to use
 
-For example your `staging.yaml` file:
+For example, you have a file `staging.yaml`[^1]:
 
 ```yaml
 ENVIRONMENT: "staging"
@@ -16,19 +18,21 @@ API_URL: "https://lol.hi"
 API_KEY: "69sike420"
 ```
 
-_Note_: the CLI expects a _flat_ file with no nesting.
+Running `yec staging.yaml` will output the _string_:
 
-Running `yec staging.yaml` will output the _string_ `API_KEY=69sike420 API_URL=https://lol.hi ENVIRONMENT=staging`
+```txt
+API_KEY=69sike420 API_URL=https://lol.hi ENVIRONMENT=staging
+```
 
-This is useful because you can instead run this:
+This is useful because you can instead run:
 
 ```sh
 export `yec staging.yaml`
 ```
 
-Now all the secrets in `staging.yaml` will be exported as environment variables.
+Now all the secrets in `staging.yaml` will be available in your terminal as environment variables.
 
-So if you have a `main.go` script that requires certain variables, you can just:
+So if you have a `main.go` script that requires certain variables, you can run:
 
 ```sh
 export `yec staging.yaml` && go run main.go
@@ -40,12 +44,15 @@ To see what environment variables are set, run [`printenv`](https://man7.org/lin
 
 ## Developing
 
-Running `npm start` reads the `sample.yaml`, exports it as environment variables, and runs `test.js` which will print the three set variables.
+Running `npm start` reads the `sample.yaml`, exports each key/value pair as environment variables, and runs `test.js` which will print the three[^2] set variables.
 
 _Note_: `npm start` will not update the environment variables except for the execution of `test.js`
 
-Adjust the script to your liking by editing `index.js` and then install your _custom version_ of `yec` command with `npm run global`c
+Adjust the script to your liking by editing `index.js` and then install your _custom version_ of `yec` command with `npm run global`
 
 ## Motivation
 
 Launching Cloud Functions to GCP is easy with `--env-vars-file=production.yml` but when you try to use the _Functions Framework_ you now have to figure out a way to get those environment variables loaded. Perhaps you use a shell script which duplicates the contents of the `.yml` file, but it's annoying.
+
+[^1]: _Note_ that the CLI expects a _flat_ file with no nesting
+[^2]: _Note_ that the three keys are hardcoded for convenience
