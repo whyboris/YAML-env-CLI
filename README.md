@@ -1,4 +1,4 @@
-[![npm](https://img.shields.io/npm/v/yaml-env-cli)](https://www.npmjs.com/package/typescript-call-graph)
+[![npm](https://img.shields.io/npm/v/yaml-env-cli)](https://www.npmjs.com/package/yaml-env-cli)
 
 # YAML-env-CLI
 
