@@ -1,0 +1,26 @@
+{
+  "name": "yaml-env-cli",
+  "version": "0.0.1",
+  "description": "CLI to help you set environment variables based on your YAML file",
+  "keywords": [
+    "YAML",
+    "env",
+    "environment"
+  ],
+  "scripts": {
+    "start": "export `node index.js sample.yaml` && node test.js",
+    "global": "npm install -g ."
+  },
+  "main": "index.js",
+  "bin": {
+    "yec": "./index.js"
+  },
+  "author": "Boris Yakubchik",
+  "homepage": "https://yboris.dev",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "18.13.0",
+    "dotenv": "16.0.3",
+    "yaml": "2.2.1"
+  }
+}
