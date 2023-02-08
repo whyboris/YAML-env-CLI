@@ -1,3 +1,5 @@
+[![npm](https://img.shields.io/npm/v/yaml-env-cli)](https://www.npmjs.com/package/typescript-call-graph)
+
 # YAML-env-CLI
 
 A **CLI** that does only one thing: outputs the contents of a `YAML` file (`.yml` or `.yaml`) as a _string_ (so as to help you load each key/value pair as environment variables).
