@@ -24,7 +24,7 @@ Running `yec staging.yaml` will output the _string_:
 API_KEY=69sike420 API_URL=https://lol.hi ENVIRONMENT=staging
 ```
 
-This is useful because you can instead run:
+This is useful because you can instead run[^2]:
 
 ```sh
 export `yec staging.yaml`
@@ -44,7 +44,7 @@ To see what environment variables are set, run [`printenv`](https://man7.org/lin
 
 ## Developing
 
-Running `npm start` reads the `sample.yaml`, exports each key/value pair as environment variables, and runs `test.js` which will print the three[^2] set variables.
+Running `npm start` reads the `sample.yaml`, exports each key/value pair as environment variables, and runs `test.js` which will print the three[^3] set variables.
 
 _Note_: `npm start` will not update the environment variables except for the execution of `test.js`
 
@@ -55,4 +55,5 @@ Adjust the script to your liking by editing `index.js` and then install your _cu
 Launching Cloud Functions to GCP is easy with `--env-vars-file=production.yml` but when you try to use the _Functions Framework_ you now have to figure out a way to get those environment variables loaded. Perhaps you use a shell script which duplicates the contents of the `.yml` file, but it's annoying.
 
 [^1]: _Note_ that the CLI expects a _flat_ file with no nesting
-[^2]: _Note_ that the three keys are hardcoded for convenience
+[^2]: _Note_ this _CLI_ might not work on _Windows_
+[^3]: _Note_ that the three keys are hardcoded for convenience
